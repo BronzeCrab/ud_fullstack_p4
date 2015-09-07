@@ -18,7 +18,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Request is `SESS_GET_REQUEST` (only `websafeConferenceKey`). Getting conf_key by websafeKey, then query sessions with  ancestor equal to conf_key.
 <h3>Task 2: Add Sessions to User Wishlist</h3>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I've implemented `addSessionToWishlist()` and `getSessionsInWishlist` api methods. 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`addSessionToWishlist()` takes `SESS_GET_REQUEST_4` (only `SessionKey`) as a request. Making session in `Wishlist` as a child of `Session`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`addSessionToWishlist()` takes `SESS_GET_REQUEST_4` (only `SessionKey`) as a request. Making session in `Wishlist` as a child of `Session`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`getSessionsInWishlist()` takes VoidMessage as a request. Just quering all `Wishlist`.
 <h3>Task 3: Work on indexes and queries</h3>
 <h3>Task 4: Add a Task</h3>
