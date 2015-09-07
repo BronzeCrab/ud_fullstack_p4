@@ -21,7 +21,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`addSessionToWishlist()` takes `SESS_GET_REQUEST_4` (only `SessionKey`) as a request. Making session in `Wishlist` as a child of `Session`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`getSessionsInWishlist()` takes VoidMessage as a request. Just quering all `Wishlist`.
 <h3>Task 3: Work on indexes and queries</h3>
+<h4>Two additional queries</h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please check out `orderSessionsInWishlist()` and `getSessionsByName()` functions.
+<h4>Query realted problem</h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check out `getSessionsNotWorkshops()` function. I've tried to solve this problem in code. I think it should work, returning all sessions wish are not workshop and begore 19:00.
 <h3>Task 4: Add a Task</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I've added memcache entity in the end of `createSession()` function. Also added `getFeaturedSpeaker()` wich is returning name of the speaker from the memcache. Memcache key is `ABOUT_SPEAKER` definied at the top of `confrerenc.py`.
 
 
 
