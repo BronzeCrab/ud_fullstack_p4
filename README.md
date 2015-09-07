@@ -8,8 +8,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I've created `Session`, `SessionForm` and `SessionForms` in `models.py`. There are `date` and `startTime` fields in `Session`, they are equal to `DateProperty` and `TimeProperty` respectively. `name`, `highlights`, `speaker`, `duration`, `typeOfSession` are `StringField` classes.`date` and `startTime` fields inside `SessionForm` have `StringField` type, because I hasn't founded `DateField` or `TimeField` classes inside `messages`   module, only `DateTimeField`.<br>
 <h4>createSession()</h4>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This function takes `SESS_POST_REQUEST` as request. `SESS_POST_REQUEST` consists of `SessionForm` and parameter `websafeConferenceKey` which is necessary. It will be shown in bold red in api explorer. Only registred user can ran this function, and one can create session only if he is creator of the conference (`organizerUserId` of the conference should be equal to current user_id). Session is created as a child of Conference(parent=conf_key).
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I've also created private function `_copySessionToForm` in order to be able to return `SessionForm` from this function.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TASK 4 is implemented in the end of this function (setting announcement in memcache for the case when speaker of the session has more then one session to hold in current conference).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I've also created private function `_copySessionToForm` in order to be able to return `SessionForm` from this function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TASK 4 is implemented in the end of this function (setting announcement in memcache for the case when speaker of the session has more then one session to hold in current conference).
 <h4>getSessionsBySpeaker()</h4>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Request is `SESS_GET_REQUEST_2`(speaker StringField). Just query all sessions by speaker and return `SessionForms`.
 <h4>getConferenceSessionsByType()</h4>
