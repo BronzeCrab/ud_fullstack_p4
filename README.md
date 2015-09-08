@@ -23,10 +23,15 @@ I've implemented `addSessionToWishlist()` and `getSessionsInWishlist` api method
 <h3>Task 3: Work on indexes and queries</h3>
 <h4>Two additional queries</h4>
 Please check out `orderSessionsInWishlist()` and `getSessionsByName()` functions.
+<h3>orderSessionsInWishlist()</h3>
+in fact i wanted to sort by date and time simultaneously, but multiple orders won't work, dont know why, so I've
+supposted to do, but it doesn't work: `wish_sessions = wish_sessions.order(Wishlist.startTime).order(Wishlist.date)`. And I implemented just one order - by startTime id ascending order. just quering all I have in Wishlist and then order by startTime.Takes VoidMessage as a request.Returns `SessionForms`.
+<h3>getSessionsByName()</h3>
+Retriving all sessions from all conferences and filter by name, specified by user. Very similar to `getSessionsBySpeaker()`. Takes `SESS_GET_REQUEST_5` (`name` StringField) as a request. Returns `SessionForms`.
 <h4>Query realted problem</h4>
-Check out `getSessionsNotWorkshops()` function. I've tried to solve this problem in code. I think it should work, returning all sessions wish are not workshop and begore 19:00.
+Check out `getSessionsNotWorkshops()` function. I've tried to solve this problem in code. I think it should work, returning all sessions wich are not workshop and before 19:00. 
 <h3>Task 4: Add a Task</h3>
-I've added memcache entity in the end of `createSession()` function. Also added `getFeaturedSpeaker()` wich is returning name of the speaker from the memcache. Memcache key is `ABOUT_SPEAKER` definied at the top of `confrerenc.py`.
+I've added memcache entity in the end of `createSession()` function. Also added `getFeaturedSpeaker()` wich is returning name of the speaker from the memcache. Memcache key is `ABOUT_SPEAKER` definied at the top of `conference.py`.
 
 
 
