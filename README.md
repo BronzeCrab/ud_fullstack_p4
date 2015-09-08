@@ -29,10 +29,6 @@ supposted to do, but it doesn't work: `wish_sessions = wish_sessions.order(Wishl
 <h5>getSessionsByName()</h5>
 Retriving all sessions from all conferences and filter by name, specified by user. Very similar to `getSessionsBySpeaker()`. Takes `SESS_GET_REQUEST_5` (`name` StringField) as a request. Returns `SessionForms`.
 <h4>Query realted problem</h4>
-Check out `getSessionsNotWorkshops()` function. I've tried to solve this problem in code. I think it should work, returning all sessions wich are not workshop and before 19:00. 
+Check out `getSessionsNotWorkshops()` function. I've tried to solve this problem in code. I think it should work, returning all sessions wich are not workshop and before 19:00. The problem was that I don't know how to compare datetime objects, guess it's impossible. So, I've thought first query non workshops sessions, it's easy and then to make list of SessionForm form all non workshops sessions using `_copySessionToForm` function, wich is so kind to make strings from datetime objects. Having list of all SessionForms with all string fields I can then parse that list like `if session.startTime[0:2] <= '19'`. In fact I thougt about that it is better to do something like `if int(session.startTime[0:2]) <= 19`, but for example `'18' < '19'` is working in python pretty well too.
 <h3>Task 4: Add a Task</h3>
 I've added memcache entity in the end of `createSession()` function. Also added `getFeaturedSpeaker()` wich is returning name of the speaker from the memcache. Memcache key is `ABOUT_SPEAKER` definied at the top of `conference.py`.
-
-
-
-
