@@ -128,6 +128,7 @@ class SessionForm(messages.Message):
     typeOfSession = messages.StringField(5)
     date = messages.StringField(6)
     startTime = messages.StringField(7)
+    sessionKey = messages.StringField(8)
 
 class SessionForms(messages.Message):
     """SessionForms -- multiple SessionForm inbound form message"""
@@ -142,5 +143,6 @@ class Wishlist(ndb.Model):
     typeOfSession = ndb.StringProperty()
     date = ndb.DateProperty()
     startTime = ndb.TimeProperty()
+    sessionKey = ndb.StringProperty()
 
 
